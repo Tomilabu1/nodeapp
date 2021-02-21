@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  run_tests:
+  app:
   docker:
   - image: circleci/node:10
   steps:
@@ -15,4 +15,8 @@ jobs:
     name: Echo 
     command: | 
       echo "This has a working npm app"
+workflows:
+    build_test:
+        jobs:
+          - app
     

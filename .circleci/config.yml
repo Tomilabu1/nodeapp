@@ -13,6 +13,10 @@ jobs:
         name: Install npm dependancies 2
         command: | 
           npm init -y
+    - run:
+        name: Install npm dependancies 3
+        command: | 
+          node app.js
   
 workflows:
     build_test:

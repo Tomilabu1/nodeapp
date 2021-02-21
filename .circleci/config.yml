@@ -6,15 +6,13 @@ run_tests:
   steps:
   - checkout
   - run:
-    name: Install npm dependancies 1
-    command: | 
-      npm install --save
-    name: Install npm dependancies 2
-    command: | 
-      npm init -y
-    name: Echo 
-    command: | 
-      echo "This has a working npm app"
+        name: Install npm dependancies 1
+        command: | 
+          npm install --save
+  - run:
+        name: Install npm dependancies 2
+        command: | 
+          npm init -y
 workflows:
     build_test:
         jobs:

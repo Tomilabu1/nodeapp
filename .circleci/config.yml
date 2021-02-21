@@ -3,29 +3,30 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
-  working_directory: /tmp
+    steps:
     - checkout
-            command: | 
-            echo "my artifact file" > /tmp/artifact-1;
+    - run:
+        name: Install npm dependancies 1
+        command: | 
+          npm install --save
+    - run:
+        name: Install npm dependancies 2
+        command: | 
+          npm init -y
+    - run:
+        name: create folder
+        command: | 
+          echo "my artifact file" > /tmp/artifact-1;
             mkdir /tmp/artifacts;
             echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
-      steps:
-        - run:
-          name: Install npm dependancies 1
-            command: | 
-              npm install --save 
-        - run:
-          name: Install npm dependancies 2
-            command: | 
-              npm init -y
-    
     - store_artifacts:
-            path: /tmp/artifact-1
-            destination: artifact-file
+          path: /tmp/artifact-1
+          destination: artifact-file
 
     - store_artifacts:
-            path: /tmp/artifacts
-workflows:s
+          path: /tmp/artifacts
+  
+workflows:
     build_test:
         jobs:
           - run_tests

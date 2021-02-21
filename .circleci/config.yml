@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  run_tests:
+  docker:
+  - image: circleci/node:10
+  steps:
+  - checkout
+  - run:
+    name: Install npm dependancies 1
+    command: | 
+      npm install --save
+    name: Install npm dependancies 2
+    command: | 
+      npm init -y
+    name: Echo 
+    command: | 
+      echo "This has a working npm app"
+    

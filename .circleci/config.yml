@@ -8,11 +8,11 @@ jobs:
     - run:
         name: Install npm dependancies 1
         command: | 
-          npm npm init -y
+          npm install --save 
     - run:
         name: Install npm dependancies 2
         command: | 
-          npm install --save 
+          npm init -y
     - run:
         name: Install npm dependancies 3
         command: | 

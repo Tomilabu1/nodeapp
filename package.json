@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "/tests"
+    "test": "/tests",
+    "start":"/app.js"
   },
   "repository": {
     "type": "git",

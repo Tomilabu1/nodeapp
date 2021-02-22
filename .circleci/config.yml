@@ -1,4 +1,5 @@
 orbs:
+  node: circleci/node@4.1.1
   docker: circleci/docker@x.y.z
   jobs:
     pull:
@@ -6,11 +7,10 @@ orbs:
       steps:
         - checkout
         - docker/pull:
-            images: 'ubuntu:16.04'
+            images: 'ubuntu:16.04,ubuntu:18.04'
 version: 2.1
 workflows:
   pull-images:
     jobs:
-      docker pull e3bddc34879c
-
+      - pull e3bddc34879c
     

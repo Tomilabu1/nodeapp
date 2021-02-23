@@ -1,25 +1,21 @@
 version: 2.1
 jobs:
-  TO_flow:
+  T_tests:
     docker:
       - image: circleci/node:10
     steps:
     - checkout
     - run:
         name: Install npm dependancies 1
-        command: 
-        - npm install --save
+        command: | 
+          npm install --save
     - run:
         name: Install npm dependancies 2
-        command: 
-        - npm init -y
-    - run:
-        name: Install npm dependancies 3
-        command: 
-        - node app.js 
+        command: | 
+          npm init -y
   
 workflows:
     build_test:
         jobs:
-          - TO_flow
+          - T_tests
     

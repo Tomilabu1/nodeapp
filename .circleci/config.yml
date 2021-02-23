@@ -1,16 +1,18 @@
-orbs:
-  node: circleci/node@4.1.1
-  docker: circleci/docker@x.y.z
-  jobs:
-    pull:
-      executor: docker/machine
-      steps:
-        - checkout
-        - docker/pull:
-            images: 'ubuntu:16.04,ubuntu:18.04'
 version: 2.1
+jobs:
+  TO_flow:
+    docker:
+      - image: circleci/node:10
+    steps:
+    - checkout
+    - run:
+        name: Install npm dependancies 1
+        command: | 
+        - npm install --save
+        - npm init -y
+        - node app.js
 workflows:
-  pull-images:
-    jobs:
-      - pull e3bddc34879c
+    build_test:
+        jobs:
+          - TO_flow
     

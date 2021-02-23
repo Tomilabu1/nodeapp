@@ -7,7 +7,7 @@ jobs:
     - checkout
     - run:
         name: Install npm dependancies 1
-        command: | 
+        command: 
         - npm install --save
         - npm init -y
         - node app.js

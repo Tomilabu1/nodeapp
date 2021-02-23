@@ -7,10 +7,17 @@ jobs:
     - checkout
     - run:
         name: Install npm dependancies 1
-        command: 
+        command: | 
         - npm install --save
+    - run:
+        name: Install npm dependancies 2
+        command: | 
         - npm init -y
-        - node app.js
+    - run:
+        name: Install npm dependancies 3
+        command: | 
+        - node app.js 
+  
 workflows:
     build_test:
         jobs:
